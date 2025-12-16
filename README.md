@@ -5,7 +5,12 @@ This world code lets you write “modules” inside code blocks placed at specif
 The loader reads the block text, compiles allowed callback functions, and runs them when events happen.
 
 ## How modules are stored
-Edit `mods.moduleCoords` in world code.
+Edit `mods.moduleCoords` in world code:
+```js
+mods.moduleCoords = [
+  [0, 0, 0],
+  // [x, y, z], add more modules here
+];
 
 ## How to write modules (IMPORTANT CONCEPT)
 
