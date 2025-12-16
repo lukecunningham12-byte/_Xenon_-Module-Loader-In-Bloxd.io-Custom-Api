@@ -3,7 +3,7 @@
  *
  * @param {Function} callback
  * @param {number} delay
- * @param {"ms" | "s"} [unit]
+ * @param {"ms" | "s"} [unit] - Optional time unit (defaults to ticks)
  * @returns {number}
  */
 setTimeout(callback, delay, unit)
@@ -21,7 +21,7 @@ clearTimeout(timerId)
  *
  * @param {Function} callback
  * @param {number} delay
- * @param {"ms" | "s"} [unit]
+ * @param {"ms" | "s"} [unit] - Optional time unit (defaults to ticks)
  * @returns {number}
  */
 setInterval(callback, delay, unit)
