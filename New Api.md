@@ -1,19 +1,3 @@
-```
-/**
- * Get a snapshot list of all active timers (timeouts + intervals).
- *
- * @returns {{ id: number; type: "timeout" | "interval"; ticksLeft: number; intervalTicks: number }[]}
- */
-getTimers()
-
-/**
- * Get a snapshot list of all active intervals.
- *
- * @returns {{ id: number; ticksLeft: number; intervalTicks: number }[]}
- */
-getIntervals()
-
-js
 /**
  * Schedule a function to run once after a delay.
  *
@@ -49,5 +33,17 @@ setInterval(callback, delay, unit)
  * @returns {void}
  */
 clearInterval(timerId)
-```
 
+/**
+ * Get a snapshot list of all active timers (timeouts + intervals).
+ *
+ * @returns {{ id: number; type: "timeout" | "interval"; ticksLeft: number; intervalTicks: number }[]}
+ */
+getTimers()
+
+/**
+ * Get a snapshot list of all active intervals.
+ *
+ * @returns {{ id: number; ticksLeft: number; intervalTicks: number }[]}
+ */
+getIntervals()
