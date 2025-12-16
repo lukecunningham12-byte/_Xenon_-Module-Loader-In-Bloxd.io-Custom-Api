@@ -1,3 +1,4 @@
+```js
 /**
  * Schedule a function to run once after a delay.
  *
@@ -33,3 +34,4 @@ setInterval(callback, delay, unit)
  * @returns {void}
  */
 clearInterval(timerId)
+```
