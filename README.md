@@ -1,40 +1,33 @@
-# _Xenon_-Module-Loader-In-Bloxd.io-Custom-Api
+# _Xenon_-Module-Loader-in-Bloxd.io (Custom API)
 
+This project is a **world-code module loader** for Bloxd.io that lets you write modular logic inside **code blocks placed in the world**.
 
-This world code lets you write “modules” inside code blocks placed at specific coordinates.  
-The loader reads the block text, compiles allowed callback functions, and runs them when events happen.
+Instead of one callback overwriting another (normal world code behavior), this system **collects callbacks additively** and runs all of them when events occur.
 
-## How modules are stored
-Edit `mods.moduleCoords` in world code:
-```js
-mods.moduleCoords = [
-  [0, 0, 0],
-  // [x, y, z], add more modules here
-];
-
-## How to write modules (IMPORTANT CONCEPT)
-
-### Think of this like normal world code — with one key difference
-
-You write module code **the same way you would write world code**:
-
-- You define callbacks like `onPlayerJoin`, `tick`, `onPlayerChat`
-- You write normal JavaScript inside them
-- You can call `api.*` exactly like usual
-
-**The difference:**  
-Callbacks in modules **do NOT overwrite each other**.
-
-Instead:
-- Every time a callback name appears in a module, it is **added**
-- When the event happens, **all matching callbacks run**
+Think of this as a **plugin system** built entirely in world code.
 
 ---
 
-## Multiple callbacks are allowed (and expected)
+## What this system does
 
-In normal world code, this would break things:
+- Reads code from blocks at specific coordinates
+- Compiles allowed callbacks from block text
+- Allows unlimited modules and unlimited callbacks
+- Prevents callbacks from overwriting each other
+- Adds a full timer API (`setTimeout`, `setInterval`, etc.)
+- Handles unloaded chunks safely
+- Reports syntax and runtime errors in-game
+
+---
+
+## How modules are stored
+
+Modules live in **code blocks** at fixed coordinates.
+
+Edit this list in world code:
 
 ```js
-onPlayerJoin = () => { api.broadcastMessage("A"); };
-onPlayerJoin = () => { api.broadcastMessage("B"); };
+mods.moduleCoords = [
+  [0, 0, 0],
+  // [x, y, z] add more module blocks here
+];
