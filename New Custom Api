@@ -1,0 +1,39 @@
+setTimeout
+/**
+ * Schedule a function to run once after a delay.
+ *
+ * @param {Function} callback - Function to execute
+ * @param {number} delay - Delay amount
+ * @param {"ms" | "s"} [unit] - Optional time unit (defaults to ticks)
+ * @returns {number} Timer id
+ */
+api.setTimeout(callback, delay, unit)
+
+clearTimeout
+/**
+ * Cancel a timeout created with setTimeout.
+ *
+ * @param {number} timerId
+ * @returns {void}
+ */
+api.clearTimeout(timerId)
+
+setInterval
+/**
+ * Schedule a function to run repeatedly.
+ *
+ * @param {Function} callback - Function to execute
+ * @param {number} delay - Delay between executions
+ * @param {"ms" | "s"} [unit] - Optional time unit (defaults to ticks)
+ * @returns {number} Timer id
+ */
+api.setInterval(callback, delay, unit)
+
+clearInterval
+/**
+ * Cancel an interval created with setInterval.
+ *
+ * @param {number} timerId
+ * @returns {void}
+ */
+api.clearInterval(timerId)
