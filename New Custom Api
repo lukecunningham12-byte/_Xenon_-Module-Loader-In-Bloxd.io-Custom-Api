@@ -3,10 +3,10 @@
  *
  * @param {Function} callback
  * @param {number} delay
- * @param {"ms" | "s"} [unit] - Optional time unit (defaults to ticks)
+ * @param {"ms" | "s"} [unit]
  * @returns {number}
  */
-api.setTimeout(callback, delay, unit)
+setTimeout(callback, delay, unit)
 
 /**
  * Cancel a timeout created with setTimeout.
@@ -14,17 +14,17 @@ api.setTimeout(callback, delay, unit)
  * @param {number} timerId
  * @returns {void}
  */
-api.clearTimeout(timerId)
+clearTimeout(timerId)
 
 /**
  * Schedule a function to run repeatedly.
  *
  * @param {Function} callback
  * @param {number} delay
- * @param {"ms" | "s"} [unit] - Optional time unit (defaults to ticks)
+ * @param {"ms" | "s"} [unit]
  * @returns {number}
  */
-api.setInterval(callback, delay, unit)
+setInterval(callback, delay, unit)
 
 /**
  * Cancel an interval created with setInterval.
@@ -32,4 +32,4 @@ api.setInterval(callback, delay, unit)
  * @param {number} timerId
  * @returns {void}
  */
-api.clearInterval(timerId)
+clearInterval(timerId)
